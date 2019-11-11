@@ -27,7 +27,3 @@ module n_gram_parser
     return n_gram_list
 end
 end
-
-
-using .n_gram_parser
-println(n_gram_parser.make_n_gram("I am a NLper", "char", 3))
