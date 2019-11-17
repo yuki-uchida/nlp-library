@@ -9,3 +9,7 @@ using Test
 
 @test n_gram_parser.make_n_gram("I am a NLPer", "char", 3) == Any[["I","a","m"],["a","m","a"],["m","a","N"],["a","N","L"],["N","L","P"],["L","P","e"],["P","e","r"]]
 
+
+
+@test n_gram_parser.joint_str(Any[["I","am","a"],["am","a","NLPer"]]) == Any["Iama","amaNLPer"]
+@test n_gram_parser.joint_str(Any[["p","a"],["a","r"],["r","a"]]) == Any["pa","ar","ra"]

@@ -26,4 +26,17 @@ module n_gram_parser
     """ returnでn-gramの行列を返す """
     return n_gram_list
 end
+    export joint_str
+    function joint_str(n_gram_list::Array) 
+    joint_n_gram_list = []
+    for bi_gram in n_gram_list
+                ## 中に入ってる文字列を全て連結する
+        joint_str = ""
+        for char in bi_gram
+            joint_str *= char
+        end
+        joint_n_gram_list = append!(joint_n_gram_list, [joint_str])
+    end
+    return joint_n_gram_list
+end
 end
